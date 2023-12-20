@@ -1,0 +1,121 @@
+.button-10 {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #367AF6 ; 
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    position: absolute; 
+    left: 295px;
+}
+
+.header1 {
+    text-align: left !important;
+    margin-left: 200px !important;
+    margin-right: 200px !important;
+}
+
+.paragraph1 {
+    text-align: left !important;
+    margin-left: 200px !important;
+    margin-right: 200px !important;
+}
+
+.button-10:focus {
+    box-shadow: inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2), 0px 0.5px 1.5px rgba(54, 122, 246, 0.25), 0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
+    outline: 0;
+}
+
+.background1 {
+    background-image: url(./Imgs/img1.png); 
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
+
+.background2 {
+    background-image: url(./Imgs/img2.png); 
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
+
+.background3 {
+    background-image: url(./Imgs/img6.png); 
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
+
+.background4 {
+    background-image: url(./Imgs/img7.png);
+    background-repeat: no-repeat;
+    background-size: cover
+}
+
+/* Add a class to define the animation */
+.animated-section {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+}
+
+/* Define the animation for each direction */
+.animated-section.from-left {
+    transform: translateX(-50px);
+}
+
+.animated-section.from-right {
+    transform: translateX(50px);
+}
+
+/* Apply the animation when the section is in the viewport */
+.animated-section.in-viewport {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Add this to your existing CSS file */
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.section .container {
+    overflow: hidden;
+}
+
+.right {
+    animation: slideInFromRight 2s ease-out;
+}
+
+.left {
+    animation: slideInFromLeft 2s ease-out;
+}
+
+.form-inputs{
+    position:relative;
+    height:45px; 
+    box-shadow:none;
+}
+
+.form-inputs i{
+    position:absolute;
+    right:10px;
+    top:12px;
+}

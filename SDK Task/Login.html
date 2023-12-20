@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Image Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@1,200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./CSS/RegisterStyle.css">
+</head>
+
+<body>
+    <div class="page-container">
+        <!-- Left half for the form -->
+        <div class="left-half">
+            <div class="container">
+                <form class="form" id="login" action="#" method="POST">
+                    <img src="./CSS/Imgs/logo.png" class="logo" alt="">
+                    <h1 class="title">Welcome back</h1>
+                    <p class="title">Welcome back! Please enter your details.</p>
+
+                    <div class="form__input-group">
+                        <label for="username" class="label">Username</label>
+                        <input type="text" id="username" class="input" autofocus placeholder="Username" name="username" required>
+                    </div>
+
+                    <div class="form__input-group">
+                        <label for="password" class="label">Password</label>
+                        <input type="password" id="password" class="input" autofocus placeholder="Password" name="password" required>
+                    </div>
+
+                    <input type="hidden" name="userId" value="">
+
+                    <button class="button" type="submit">Login</button>
+
+                    <p class="form__text">
+                        <a class="form__link" href="./CreateAccount.html" id="linkCreateAccount">Don't have an account? Create an account</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+
+        <!-- Right half for the image -->
+        <div class="right-half">
+            <img src="./CSS/Imgs/back.png" alt="Image description">
+        </div>
+    </div>
+</body>
+
+</html>

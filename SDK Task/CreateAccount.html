@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Image Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@1,200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./CSS/RegisterStyle.css">
+</head>
+
+<body>
+    <div class="page-container">
+        <!-- Left half for the form -->
+        <div class="left-half">
+            <div class="container">
+                <form class="form" id="login" action="#" method="POST">
+                    <h1 class="title">Create an account</h1>
+
+                    <div class="form__input-group">
+                        <label for="username" class="label">Username</label>
+                        <input type="text" id="username" class="input" autofocus placeholder="Username" name="username" required>
+                    </div>
+
+                    <div class="form__input-group">
+                        <label for="email" class="label">Email</label>
+                        <input type="email" id="email" class="input" autofocus placeholder="Email" name="email" required>
+                    </div>
+
+                    <div class="form__input-group">
+                        <label for="phone" class="label">Phone number</label>
+                        <input type="number" id="phone" class="input" autofocus placeholder="Phone number" name="phone" required>
+                    </div>
+
+                    <div class="form__input-group">
+                        <label class="label">Gender</label>
+                        <input type="radio" class="input radio" name="gender" value="male" id="male">
+                        <label for="male" class="label-2">Male</label>
+                        <input type="radio" class="input radio" name="gender" value="female" id="female">
+                        <label for="female" class="label-2">Female</label>
+                    </div>
+
+                    <div class="form__input-group">
+                        <label for="password" class="label">Password</label>
+                        <input type="password" id="password" class="input" autofocus placeholder="Password" name="password" required>
+                    </div>
+
+                    <div class="form__input-group">
+                        <label for="confirmPassword" class="label">Confirm Password</label>
+                        <input type="password" id="confirmPassword" class="input" autofocus placeholder="Confirm Password" name="confirmPassword" required>
+                    </div>
+
+                    <input type="hidden" name="userId" value="">
+
+                    <button class="button" type="submit">Create an account</button>
+
+                    <p class="form__text">
+                        <a class="form__link" href="./Login.html" id="linkCreateAccount">Already have an account? Login</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+
+        <!-- Right half for the image -->
+        <div class="right-half">
+            <!-- You can keep the image here or replace it with your desired image -->
+            <img src="./CSS/Imgs/back.png" alt="Image description">
+        </div>
+    </div>
+</body>
+
+</html>
