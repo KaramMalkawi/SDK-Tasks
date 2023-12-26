@@ -1,7 +1,6 @@
-function googleTranslateElementInit() {
-    // Retrieve the stored language preference or use 'en' as the default value
-    var storedLang = localStorage.getItem('lang') || 'en';
+var storedLang = localStorage.getItem('lang') || 'en';
 
+function googleTranslateElementInit() {
     // Create a new instance of the Google Translate widget
     var translateWidget = new google.translate.TranslateElement(
         {
@@ -13,45 +12,71 @@ function googleTranslateElementInit() {
         'google_translate_element'
     );
 
-    // Function to toggle between 'en' and 'ar' languages
-    function toggleLanguage() {
-        // Toggle the language
-        var newLang = storedLang === 'en' ? 'ar' : 'en';
+    // Create a custom button for toggling language
+    var customButton = document.createElement('button');
+    customButton.textContent = 'Toggle Language';
+    customButton.addEventListener('click', toggleLanguage);
 
-        // Update the language in the widget
-        translateWidget.showBanner(newLang);
+    // Append the custom button to the document body
+    document.body.appendChild(customButton);
 
-        // Update the stored language preference
-        storedLang = newLang;
-        setLanguagePreference(storedLang);
+    // Set initial styles and content
+    updateStyles();
+    updateContent();
+} 
 
-        // Log the updated language to the console for debugging
-        console.log('Updated Language:', storedLang);
-    }
+function toggleLanguage() {
+    // Toggle the language
+    var newLang = storedLang === 'en' ? 'ar' : 'en';
+    storedLang = newLang;
 
-    // Attach the toggleLanguage function to a button click event or any other trigger
-    var toggleButton = document.getElementById('toggleLanguageButton');
-    if (toggleButton) {
-        toggleButton.addEventListener('click', toggleLanguage);
-    }
+    // Update styles and content immediately
+    updateStyles();
+    updateContent();
 
-    // Check if the stored language is 'ar' and adjust the button style accordingly
-    if (storedLang === 'ar') {
-        adjustButtonStyle('1%');
+    console.log('Updated Language:', storedLang);
+}
+
+function updateStyles() {
+    var buttonElement = document.getElementById('exampleModalButton');
+    var buttonLang = document.getElementsByClassName('VIpgJd-ZVi9od-xl07Ob-lTBxed')[0].children[0];
+
+    // Update the text content of the anchor element based on the selected language
+    if (localStorage.getItem('lang') === 'en') {
+        buttonLang.innerText = 'English';
     } else {
-        adjustButtonStyle('4.5%');
+        buttonLang.innerText = 'Arabic';
     }
 
-    // Function to adjust the button style based on the margin value
-    function adjustButtonStyle(marginValue) {
-        var buttonElement = document.getElementById('exampleModalButton');
-        if (buttonElement) {
-            buttonElement.style.marginRight = marginValue;
-        }
+    // Conditionally set the style based on the text content
+    if (buttonLang.innerText === 'English') {
+        buttonElement.style.marginRight = '1%';
+    } else {
+        buttonElement.style.marginRight = '4.5%';
     }
 }
 
-// Function to set the language preference in the local storage
+function updateContent() {
+    var aiButton = document.getElementById('exampleModalButton');
+
+    // Update the innerHTML of the element based on the selected language
+    if (localStorage.getItem('lang') === 'en') {
+        aiButton.innerHTML = 'Ai Modil'; // Replace with your English content
+    } else {
+        aiButton.innerHTML = 'ذكاء مودل'; // Replace with your Arabic content
+    }
+
+    var profileButton = document.getElementById('ProfileButton');
+
+    // Update the innerHTML of the element based on the selected language
+    if (localStorage.getItem('lang') === 'en') {
+        profileButton.innerHTML = '<i class="fa-solid fa-user"></i> User Profile'; // Replace with your English content
+    } else {
+        profileButton.innerHTML = '<i class="fa-solid fa-user"></i> بروفايل شخصي'; // Replace with your Arabic content
+    }
+}
+
+// Function to set the language preference in local storage
 function setLanguagePreference(lang) {
     localStorage.setItem('lang', lang);
 
